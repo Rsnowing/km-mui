@@ -1,0 +1,39 @@
+.km-toast {
+    position: fixed;
+    left: 0;
+    bottom: 150px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+    z-index: 9999;
+    font-family: $font-family;
+    &-inner {
+        position: relative;
+        display: inline-block;
+        max-width: 65%;
+        text-align: center;
+        line-height: 1.5;
+        padding: 10px 30px;
+        word-break: break-all;
+        background: rgba(46, 46, 46, .8);
+        border-radius: 7px;
+        font-size: $font-size-base;
+        color: #fff;
+    }
+    &-text {
+
+    }
+}
+
+.toastfade-enter-active {
+    transition: opacity 0.1s;
+}
+
+.toastfade-leave-active {
+    transition: opacity 0.3s;
+}
+
+.toastfade-enter,
+.toastfade-leave-active {
+    opacity: 0;
+}
