@@ -1,10 +1,16 @@
 <template>
     <transition name="toastfade">
         <div 
+            :id="id"
             v-if="visible"
             :class="toastClass"
         >
-            <div class="km-toast-inner">
+            <div class="km-toast-inner" :style="toastStyle">
+                <span v-if="hasIcon" class="km-toast-icon-wrapper">
+                <i :class="iconClass"
+                    :style="{ 'background-image': cusIcon }"
+                ></i>
+                </span>
                 <span class="km-toast-text" v-html="msg"></span>
             </div>
         </div>
@@ -20,26 +26,90 @@ export default {
 
     data() {
         return {
+            id: '',
+            type: '',
             visible: false,
-            msg: ''
+            msg: '',
+            timer: null,
+            duration: 2000,
+            textAlign: 'center', // 多行文本是否居中
+            bgColor: 'rgba(46, 46, 46, 0.7)',
+            customClass: '', // 自定义类
+            icon: '',
+            loadingRotate: true,
+            center: true,
+            onClose: null, // 关闭回调
         }
     },
 
     computed: {
+        hasIcon() {
+            return this.type !== 'text'
+        },
+
+        cusIcon() {
+            return this.icon ? `url(${this.icon})` : ''
+        },
+
+        iconClass() {
+            return [
+                'km-toast-icon',
+                this.type,
+                { 'km-toast-icon-rotate': this.type === 'loading' && this.loadingRotate }
+            ]
+        },
+
         toastClass() {
             return [
-                'km-toast'
+                'km-toast',
+                { 'km-toast-center': this.center },
+                { 'km-toast-has-icon': this.hasIcon },
+                { 'km-loading': this.type === 'loading' },
+                this.customClass
+            ]
+        },
+
+        toastStyle() {
+            return [
+                { 'text-align': this.textAlign },
+                { 'background-color': this.bgColor }
             ]
         }
     },
 
-    mounted() {
+    
+    watch: {
+        visible(val) {
+            val && this.show()
+        }
+    },
+
+    destroyed() {
+        this.timer = null;
     },
 
     methods: {
+        show() {
+            this.clearTimer()
+            if (this.duration) {
+                this.timer = setTimeout(() => {
+                this.hide();
+                }, this.duration);
+            }
+        },
+
+        hide() {
+            this.clearTimer();
+            this.visible = false;
+            typeof this.onClose === "function" && this.onClose();
+        },
+
+        clearTimer() {
+            if (this.timer) {
+                clearTimeout(this.timer);
+                this.timer = null;
+            }
+        }
     }
 }
 </script>
-
-<style scoped lang="scss">
-</style>

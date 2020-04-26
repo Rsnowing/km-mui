@@ -19,5 +19,4 @@ import Vue from "vue"
 import settings from "./toast.vue"
 // 将组件挂到Vue上
 let ToastConstructor = Vue.extend(settings);
-
 ```
