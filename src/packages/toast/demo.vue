@@ -1,21 +1,35 @@
 <template>
-    <section class="toast-test">
-        <h2>吐司测试</h2>
-        <div @click="handleClick">短文字</div>
-        <br/>
-        <div @click="handleLongClick">长文字</div>
-        <br/>
-        <div @click="handleSucClick">成功提示</div>
-        <br/>
-        <div @click="handleFailClick">失败提示</div>
-        <br/>
-        <div @click="handleWarnClick">警告提示</div>
-        <br/>
-        <div @click="handleLoading">loading</div>
-        <br/>
-        <div @click="handleLockBg">锁定背景</div>
-        <br/>
-    </section>
+  <section class="toast-test">
+    <h2>吐司测试</h2>
+    <div @click="handleClick">
+      短文字
+    </div>
+    <br>
+    <div @click="handleLongClick">
+      长文字
+    </div>
+    <br>
+    <div @click="handleSucClick">
+      成功提示
+    </div>
+    <br>
+    <div @click="handleFailClick">
+      失败提示
+    </div>
+    <br>
+    <div @click="handleWarnClick">
+      警告提示
+    </div>
+    <br>
+    <div @click="handleLoading">
+      loading
+    </div>
+    <br>
+    <div @click="handleLockBg">
+      锁定背景
+    </div>
+    <br>
+  </section>
 </template>
 
 <script>
@@ -90,6 +104,6 @@ export default {
 
 <style lang="scss">
 .toast-test {
-    height: 900px;
+  height: 900px;
 }
 </style>

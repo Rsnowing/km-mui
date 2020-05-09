@@ -4,7 +4,8 @@ module.exports = {
     es6: true
   },
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
+    // "plugin:prettier/recommended",
     'standard'
   ],
   globals: {
@@ -12,12 +13,13 @@ module.exports = {
     SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
+    parser: 'babel-eslint',
     ecmaVersion: 11,
     sourceType: 'module'
   },
-  plugins: [
-    'vue'
-  ],
+  plugins: ['vue'],
   rules: {
+    'vue/no-v-html': 0
+    // 'prettier/prettier': 'error'
   }
 }

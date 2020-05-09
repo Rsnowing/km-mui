@@ -1,20 +1,30 @@
 <template>
-    <transition name="toastfade">
-        <div
-            :id="id"
-            v-if="visible"
-            :class="toastClass"
+  <transition name="toastfade">
+    <div
+      v-if="visible"
+      :id="id"
+      :class="toastClass"
+    >
+      <div
+        class="km-toast-inner"
+        :style="toastStyle"
+      >
+        <span
+          v-if="hasIcon"
+          class="km-toast-icon-wrapper"
         >
-            <div class="km-toast-inner" :style="toastStyle">
-                <span v-if="hasIcon" class="km-toast-icon-wrapper">
-                <i :class="iconClass"
-                    :style="{ 'background-image': cusIcon }"
-                ></i>
-                </span>
-                <span class="km-toast-text" v-html="msg"></span>
-            </div>
-        </div>
-    </transition>
+          <i
+            :class="iconClass"
+            :style="{ 'background-image': cusIcon }"
+          />
+        </span>
+        <span
+          class="km-toast-text"
+          v-html="msg"
+        />
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -57,7 +67,9 @@ export default {
       return [
         'km-toast-icon',
         this.type,
-        { 'km-toast-icon-rotate': this.type === 'loading' && this.loadingRotate }
+        {
+          'km-toast-icon-rotate': this.type === 'loading' && this.loadingRotate
+        }
       ]
     },
 
