@@ -27,6 +27,12 @@ this.$toast.hideLoading()
 // 或者
 this.hideLoading()
 ```
+锁定背景
+```js
+this.$toast.hideLoading({ lockBg: true })
+// 或者
+this.hideLoading()
+```
 ### API
 
 | 字段          | 说明                                      | 类型         | 默认值                  |
@@ -40,4 +46,4 @@ this.hideLoading()
 | icon          | 自定义图标（base64/图片链接）             | String       | ""                      |
 | loadingRotate | loading图标是否旋转，仅对loading有效      | Boolean      | true                    |
 | onClose       | 关闭时触发的事件                          | function     | null                    |
-
+| lockBg        | 打开吐司时是否锁定背景层                  | Boolean      | false                    |

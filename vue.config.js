@@ -27,12 +27,14 @@ module.exports = {
 			},
 		},
 	},
-	// pug模板转译
     chainWebpack: config => {
         // config.module.rule('pug')
         //     .test(/\.pug$/)
         //     .use('pug-html-loader')
         //     .loader('pug-html-loader')
-        //     .end()
+		//     .end()
+		
+		// 移除 prefetch 插件
+		config.plugins.delete('prefetch')
     }
 }

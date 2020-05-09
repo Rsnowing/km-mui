@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { lock } from "@/utils"
 export default {
     name: 'KmToast',
     components: {},
@@ -39,6 +40,7 @@ export default {
             loadingRotate: true,
             center: true,
             onClose: null, // 关闭回调
+            lockBg: false, // 是否锁定背景
         }
     },
 
@@ -96,11 +98,15 @@ export default {
                 this.hide();
                 }, this.duration);
             }
+            // 判断是否需要锁定背景
+            this.lockBg && lock['open']()
         },
 
         hide() {
             this.clearTimer();
             this.visible = false;
+            // 背景锁定关闭
+            this.lockBg && lock['close']()
             typeof this.onClose === "function" && this.onClose();
         },
 

@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="toast-test">
         <h2>吐司测试</h2>
         <div @click="handleClick">短文字</div>
         <br/>
@@ -12,6 +12,8 @@
         <div @click="handleWarnClick">警告提示</div>
         <br/>
         <div @click="handleLoading">loading</div>
+        <br/>
+        <div @click="handleLockBg">锁定背景</div>
         <br/>
     </section>
 </template>
@@ -73,15 +75,21 @@ export default {
             );
         },
         handleLoading() {
-            this.loading = this.$toast.loading('加载中...');
+            this.loading = this.$toast.loading('加载中...', { lockBg: true });
             setTimeout(() => {
                 this.hideLoading()
                 // this.$toast.hideLoading()
             }, 3000);
+        },
+        handleLockBg() {
+            this.loading = this.$toast.loading('加载中...', { lockBg: true });
         }
     }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+.toast-test {
+    height: 900px;
+}
 </style>

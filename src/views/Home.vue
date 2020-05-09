@@ -1,18 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div class="home">
+		<ul>
+			<li v-for="(item, index) in linkList" :key="index">
+				<router-link :to="item.href">
+                    {{item.title}}
+                </router-link>
+			</li>
+		</ul>
+	</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+	name: "Home",
+	data() {
+		return {
+			linkList: [
+                { title: '吐司', href: '/toast' }
+            ],
+		};
+	},
+};
 </script>
+<style lang="scss">
+
+</style>
