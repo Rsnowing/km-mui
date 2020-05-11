@@ -18,7 +18,10 @@ export default {
   name: 'Home',
   data () {
     return {
-      linkList: [{ title: '吐司', href: '/toast' }]
+      linkList: [
+        { title: '吐司', href: '/toast' },
+        { title: '活动面板', href: '/actionsheet' }
+      ]
     }
   }
 }

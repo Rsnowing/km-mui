@@ -19,7 +19,9 @@ module.exports = {
   },
   plugins: ['vue'],
   rules: {
-    'vue/no-v-html': 0
+    'vue/no-v-html': 0,
+    'vue/name-property-casing': 0,
+    'vue/html-self-closing': 0
     // 'prettier/prettier': 'error'
   }
 }

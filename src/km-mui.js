@@ -1,7 +1,8 @@
 import Toast from '@/packages/toast/index'
+import ActionSheet from '@/packages/actionSheet/index'
 
 const components = [
-  Toast
+  Toast, ActionSheet
 ]
 
 const install = (Vue, opts = {}) => {
@@ -19,5 +20,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   version: '1.0.0',
   install,
-  Toast
+  Toast,
+  ActionSheet
 }

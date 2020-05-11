@@ -14,6 +14,12 @@ const routes = [
     name: 'toast',
     component: () =>
       import(/* webpackChunkName: "toast" */ '@/packages/toast/demo.vue')
+  },
+  {
+    path: '/actionsheet',
+    name: 'actionSheet',
+    component: () =>
+      import(/* webpackChunkName: "actionsheet" */ '@/packages/actionSheet/demo.vue')
   }
 ]
 
