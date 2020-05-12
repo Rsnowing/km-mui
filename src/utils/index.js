@@ -15,4 +15,4 @@ export const lock = (bodyClass => {
       }
     }
   }
-})('lock-bg')
+})('km-lock-bg')

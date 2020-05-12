@@ -19,3 +19,14 @@ $border-radius-base: 8px !default;
 $border-radius-small: 3px !default;
 $border-radius-large: 50px !default;
 
+// --- color ---
+$light-color: #f6f6f6;
+$active-color: red; // 选中颜色
+$disable-color: #e1e1e1;
+
+// --- Animation ---
+$animation-duration: .25s !default;
+$ease-in-out: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$animation-timing-fun: cubic-bezier(0.55, 0.085, 0.68, 0.53) !default;
+
+

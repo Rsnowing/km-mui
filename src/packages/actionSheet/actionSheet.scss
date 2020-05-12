@@ -17,9 +17,9 @@
     max-height: 80%;
     overflow: auto;
     z-index: 10001;
-    background-color: #f6f6f6;
+    background-color: $light-color;
   }
-  &-item {
+  &-item, &-cancel {
     height: 24px;
     padding: 10px;
     line-height: 24px;
@@ -27,7 +27,17 @@
     color: #2d2d2d;
     text-align: center;
     background-color: #fff;
-    border-bottom: 1px solid #f6f6f6;
+    border-bottom: 1px solid $light-color;
+    &-active {
+      color: $active-color;
+    }
+    &-disable {
+      color: $disable-color;
+    }
+  }
+  &-cancel {
+    margin-top: 5px;
+    border-top: 1px solid $light-color;
   }
 
 }

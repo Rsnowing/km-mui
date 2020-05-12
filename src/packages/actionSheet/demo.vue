@@ -1,10 +1,33 @@
 <template>
   <section class="actionsheet-test">
+    <div @click="visible1=true">
+      最简单的活动面板
+    </div>
     <km-actionsheet
-      :visible="visible"
+      :visible="visible1"
       :menu-items="menuItems"
-      @close="handleClose"
-    ></km-actionsheet>
+      :value="choosedTagValue"
+      :cancel-text="'取消'"
+      :lock-bg="false"
+      @close="visible1=false"
+      @choose="handleChoose"
+      @cancel="handleCancel"
+    >
+    </km-actionsheet>
+    <br />
+    <div @click="visible2=true">
+      自定义面板内容
+    </div>
+    <km-actionsheet
+      :visible="visible2"
+      @close="visible2=false"
+    >
+      <template v-slot:custom>
+        <div class="custom">
+          我自定义
+        </div>
+      </template>
+    </km-actionsheet>
   </section>
 </template>
 
@@ -12,23 +35,38 @@
 export default {
   data () {
     return {
-      visible: true,
+      visible1: false,
+      visible2: false,
       menuItems: [
-        { name: '男', value: 1 },
+        { name: '男', value: 1, disable: true },
         { name: '女', value: 2 }
-      ]
+      ],
+      choosedTagValue: ''
     }
   },
 
   methods: {
     handleClose () {
-      this.visible = false
-      this.$toast.text('我自闭了')
+      console.log('关闭')
+    },
+
+    handleChoose (item, index) {
+      this.choosedTagValue = item.value
+    },
+
+    handleCancel () {
+      alert('取消')
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+.actionsheet-test {
+  height: 1000px;
+  .custom {
+    padding: 20px;
+  }
+}
 
 </style>

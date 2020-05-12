@@ -21,7 +21,8 @@ module.exports = {
   rules: {
     'vue/no-v-html': 0,
     'vue/name-property-casing': 0,
-    'vue/html-self-closing': 0
+    'vue/html-self-closing': 0,
+    'vue/require-default-prop': 0
     // 'prettier/prettier': 'error'
   }
 }

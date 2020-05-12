@@ -36,7 +36,6 @@ function _getInstance (obj) {
 const Toast = {
   name: 'KmToast',
   text (msg, obj = {}) {
-    console.log(obj)
     return _getInstance({ ...obj, msg, type: 'text' })
   },
   success (msg, obj = {}) {
