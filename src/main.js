@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import KmUI from './km-mui'
+import '@/styles/reset.scss'
+import '@/styles//km.scss'
 
 Vue.config.productionTip = false
 
