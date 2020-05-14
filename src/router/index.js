@@ -26,6 +26,12 @@ const routes = [
     name: 'picker',
     component: () =>
       import(/* webpackChunkName: "picker" */ '@/packages/picker/demo.vue')
+  },
+  {
+    path: '/tab',
+    name: 'tab',
+    component: () =>
+      import(/* webpackChunkName: "tab" */ '@/packages/tab/demo.vue')
   }
 ]
 

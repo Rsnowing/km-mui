@@ -10,6 +10,10 @@
         </router-link>
       </li>
     </ul>
+    <a
+      target="_blank"
+      href="//shang.qq.com/wpa/qunwpa?idkey=9d836378ac42410048177d6db1f52c0e19005e9a2cb4ed73556a6f4d8df0413e"
+    >加我</a>
   </div>
 </template>
 
