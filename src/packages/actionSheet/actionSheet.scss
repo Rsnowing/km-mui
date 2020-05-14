@@ -39,5 +39,12 @@
     margin-top: 5px;
     border-top: 1px solid $light-color;
   }
+  &-title {
+    padding: 10px 0;
+    font-size: $font-size-base;
+    color: $title-color;
+    background-color: $light-color;
+    border-bottom: 1px solid $light-color;
+  }
 
 }

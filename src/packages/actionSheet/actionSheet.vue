@@ -12,8 +12,15 @@
         v-show="visible"
         class="km-actionsheet-panel"
       >
+        <!-- 标题 -->
+        <div
+          v-if="title"
+          class="km-actionsheet-title"
+        >
+          {{ title }}
+        </div>
         <!-- slot -->
-        <div class="nut-actionsheet-custom">
+        <div class="km-actionsheet-custom">
           <slot name="custom"></slot>
         </div>
         <!-- 面板主题 -->
@@ -42,6 +49,7 @@
 </template>
 
 <script>
+import { lock } from '@/utils'
 export default {
   name: 'kmActionsheet',
   props: {
@@ -65,12 +73,16 @@ export default {
     lockBg: {
       type: Boolean,
       default: true
+    },
+    title: {
+      type: String,
+      default: ''
     }
   },
   watch: {
     visible (value) {
       if (this.lockBg) {
-        value ? document.body.classList.add('km-overflow-hidden') : document.body.classList.remove('km-overflow-hidden')
+        value ? lock.open() : lock.close()
       }
     }
   },

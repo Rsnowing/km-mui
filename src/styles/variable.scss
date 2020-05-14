@@ -10,7 +10,7 @@ Verdana,
 "PingHei-light",
 SimHei,
 "Droid Sans" !default;
-
+// --- font-size ---
 $font-size-base: 14px !default;
 $font-size-small: 12px !default;
 $font-size-large: 16px !default;
@@ -21,8 +21,11 @@ $border-radius-large: 50px !default;
 
 // --- color ---
 $light-color: #f6f6f6;
-$active-color: red; // 选中颜色
+$active-color: rgb(240, 37, 15); // 选中颜色
 $disable-color: #e1e1e1;
+$title-color: #2d2d2d;
+$primary-color: rgb(240, 37, 15);
+$dark-color: #dadada;
 
 // --- Animation ---
 $animation-duration: .25s !default;

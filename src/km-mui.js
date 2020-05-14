@@ -1,8 +1,9 @@
 import Toast from '@/packages/toast/index'
 import ActionSheet from '@/packages/actionSheet/index'
+import Picker from '@/packages/picker/index'
 
 const components = [
-  Toast, ActionSheet
+  Toast, ActionSheet, Picker
 ]
 
 const install = (Vue, opts = {}) => {

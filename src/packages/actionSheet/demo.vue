@@ -8,6 +8,7 @@
       :menu-items="menuItems"
       :value="choosedTagValue"
       :cancel-text="'取消'"
+      :title="'选择性别'"
       :lock-bg="false"
       @close="visible1=false"
       @choose="handleChoose"
