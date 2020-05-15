@@ -1,24 +1,54 @@
 <template>
-  <km-tab
-    :tab-list="tabList"
-    :active="1"
-  >
-    <km-tab-panel tab-title="第一关">1</km-tab-panel>
-    <km-tab-panel tab-title="第2关">2</km-tab-panel>
-    <km-tab-panel tab-title="第3关">3</km-tab-panel>
-  </km-tab>
+  <section class="tab-test">
+    <km-tab
+      :default="1"
+      :swiper="false"
+      @change="handleChange"
+    >
+      <km-tab-panel label="第一关">
+        <div class="inner red">
+          <span>hadjs</span>
+        </div>
+      </km-tab-panel>
+      <km-tab-panel label="第2关">
+        <div class="inner yellow">2</div>
+      </km-tab-panel>
+      <km-tab-panel label="第3关">
+        <div class="inner tomato">3</div>
+      </km-tab-panel>
+    </km-tab>
+  </section>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      tabList: ['第一关', '第2关', '第3关']
+
+    }
+  },
+  methods: {
+    handleChange (value) {
+      console.log(value)
     }
   }
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.tab-test {
+  .km-tab-item {
+    height: 100%;
+  }
+  .inner {
+    background-color: red;
+    height: 300px;
+    &.yellow {
+      background-color: yellow;
+    }
+    &.tomato {
+      background-color: tomato;
+    }
+  }
+}
 </style>

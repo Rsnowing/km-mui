@@ -4,11 +4,16 @@ import router from './router'
 import KmUI from './km-mui'
 import '@/styles/reset.scss'
 import '@/styles//km.scss'
+import VConsole from 'vconsole'
 
 Vue.config.productionTip = false
 
-// KmUI.install(Vue)
 Vue.use(KmUI)
+
+/* eslint no-new: "off" */
+if (process.env.NODE_ENV !== 'production') {
+  new VConsole()
+}
 
 new Vue({
   router,

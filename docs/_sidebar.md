@@ -4,3 +4,5 @@
     * [actionsheet 活动面板](/feedback/actionsheet)
 * [数据录入](/data/picker)
     * [Picker 吐司](/data/picker)
+* [导航组件](/display/tab)
+    * [标签页](/display/tab)

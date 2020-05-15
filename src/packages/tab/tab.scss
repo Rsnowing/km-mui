@@ -35,15 +35,20 @@
     background:$primary-color;
     transition: all 0.4s ease-in-out;
   }
+  .swiper-wrapper {
+    background:#fff;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
   &-item {  
-      height: 200px;
-      border:1px solid #fff;
-      background:#fff;
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      .hide{
-          display: none;
-      }
+    display: flex;
+    height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    .hide{
+      display: none;
+    }
   }
 }
