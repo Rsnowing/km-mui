@@ -20,5 +20,5 @@ npm run build
 npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 组件文档
+[文档地址](https://rsnowing.github.io/km-mui/#/)
