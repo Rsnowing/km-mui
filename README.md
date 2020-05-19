@@ -1,6 +1,10 @@
 # km-mui
+## npm 安装
+```
+npm i --save lodash
+```
 
-## Project setup
+## 项目启动
 ```
 npm install
 ```
