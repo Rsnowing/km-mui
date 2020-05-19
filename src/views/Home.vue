@@ -10,10 +10,6 @@
         </router-link>
       </li>
     </ul>
-    <a
-      target="_blank"
-      href="//shang.qq.com/wpa/qunwpa?idkey=9d836378ac42410048177d6db1f52c0e19005e9a2cb4ed73556a6f4d8df0413e"
-    >加我</a>
   </div>
 </template>
 
@@ -25,7 +21,10 @@ export default {
       linkList: [
         { title: '吐司', href: '/toast' },
         { title: '活动面板', href: '/actionsheet' },
-        { title: 'picker选择器', href: '/picker' }
+        { title: 'picker选择器', href: '/picker' },
+        { title: 'tab', href: '/tab' },
+        { title: 'noticebar', href: '/noticebar' },
+        { title: 'sticky', href: '/sticky' }
       ]
     }
   }

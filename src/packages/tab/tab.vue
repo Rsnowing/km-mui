@@ -39,7 +39,7 @@ export default {
   name: 'kmTab',
   props: {
     default: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     swiper: {

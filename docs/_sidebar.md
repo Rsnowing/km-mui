@@ -6,3 +6,5 @@
     * [Picker 吐司](/data/picker)
 * [导航组件](/display/tab)
     * [标签页](/display/tab)
+    * [sticky 吸顶效果](/display/sticky)
+    * [noticebar 通知](/display/noticebar)

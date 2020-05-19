@@ -1,7 +1,9 @@
 # 开发手册
 ## 名称说明
-km: 从前有个项目叫km
-m：mobile 该库供手机端使用
+km: 从前有个项目叫km 
+
+m：mobile 该库供手机端使用 
+
 ui: ui库
 ## 插件开发流程
 ### 目录结构
@@ -29,3 +31,4 @@ let ToastConstructor = Vue.extend(settings);
 - [ ] picker
 - [ ] 顶部提示（可滚动）
 - [ ] 按需引入组件
+- [ ] npm 引入

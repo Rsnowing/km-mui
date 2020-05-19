@@ -35,8 +35,8 @@ methods: {
 ### tab Props
 | 字段             | 说明               | 类型                  | 默认值 |
 | ---------------- | ------------------ | --------------------- | ------ |
-| default          | 默认           | boolean               | false  |
-| swiper       | 是否开启滑动切换tab效果           | boolean                | true |
+| default          | 默认活跃的tab      | number, string        | 0  |
+| swiper       | 是否开启滑动切换tab效果           | boolean     | true |
 
 ### tab-panel Props
 | 字段             | 说明               | 类型                  | 默认值 |

@@ -32,6 +32,18 @@ const routes = [
     name: 'tab',
     component: () =>
       import(/* webpackChunkName: "tab" */ '@/packages/tab/demo.vue')
+  },
+  {
+    path: '/noticebar',
+    name: 'noticebar',
+    component: () =>
+      import(/* webpackChunkName: "noticebar" */ '@/packages/noticebar/demo.vue')
+  },
+  {
+    path: '/sticky',
+    name: 'sticky',
+    component: () =>
+      import(/* webpackChunkName: "sticky" */ '@/packages/sticky/demo.vue')
   }
 ]
 

@@ -1,0 +1,28 @@
+.km-noticebar {
+  height: 40px;
+  font-size: 14px;
+  position: relative;
+  color: $text-color;
+  background-color: rgba(251, 248, 220, 1);
+  overflow: hidden;
+  .content-wrap {
+    padding: 0 10px;
+    position: relative;
+    color: rgba(211, 125, 066, 1);
+    transition: all ease-out 0.2s;
+  }
+  .wrap {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
+    height: 40px;
+    transition: all ease-out 1s;
+  }
+  .text {
+    white-space: nowrap;
+    &.km-ellipsis {
+      max-width: 100%;
+    }
+  }
+}

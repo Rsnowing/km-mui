@@ -3,9 +3,11 @@ import ActionSheet from '@/packages/actionSheet/index'
 import Picker from '@/packages/picker/index'
 import Tab from '@/packages/tab/index'
 import TabPanel from '@/packages/tabpanel/index'
+import Noticebar from '@/packages/noticebar/index'
+import Sticky from '@/packages/sticky/index'
 
 const components = [
-  Toast, ActionSheet, Picker, Tab, TabPanel
+  Toast, ActionSheet, Picker, Tab, TabPanel, Noticebar, Sticky
 ]
 
 const install = (Vue, opts = {}) => {
@@ -27,5 +29,7 @@ export default {
   ActionSheet,
   Picker,
   Tab,
-  TabPanel
+  TabPanel,
+  Noticebar,
+  Sticky
 }
