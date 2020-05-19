@@ -31,4 +31,4 @@ let ToastConstructor = Vue.extend(settings);
 - [ ] picker
 - [ ] 顶部提示（可滚动）
 - [ ] 按需引入组件
-- [ ] npm 引入
+- [x] npm 引入
