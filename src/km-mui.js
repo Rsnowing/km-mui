@@ -1,10 +1,17 @@
+import { version } from '../package.json'
 import Toast from '@/packages/toast/index'
-import ActionSheet from '@/packages/actionSheet/index'
+import '@/packages/toast/toast.scss'
+import ActionSheet from '@/packages/actionsheet/index'
+import '@/packages/actionsheet/actionsheet.scss'
 import Picker from '@/packages/picker/index'
+import '@/packages/picker/picker.scss'
 import Tab from '@/packages/tab/index'
+import '@/packages/tab/tab.scss'
 import TabPanel from '@/packages/tabpanel/index'
 import Noticebar from '@/packages/noticebar/index'
+import '@/packages/noticebar/noticebar.scss'
 import Sticky from '@/packages/sticky/index'
+import '@/packages/sticky/sticky.scss'
 
 const components = [
   Toast, ActionSheet, Picker, Tab, TabPanel, Noticebar, Sticky
@@ -23,7 +30,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.0',
+  version,
   install,
   Toast,
   ActionSheet,
