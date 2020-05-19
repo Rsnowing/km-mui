@@ -1,7 +1,7 @@
 # km-mui
 ## npm 安装
 ```
-npm i --save lodash
+npm i --save km-mui
 ```
 
 ## 项目启动
