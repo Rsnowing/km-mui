@@ -3,12 +3,14 @@
   "version": "0.1.2",
   "private": false,
   "keywords": ["ui", "km-mui"],
+  "main": "lib/km-mui.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "eslint --ext .js,.vue src",
-    "lint-fix": "eslint --ext .js,.vue src --fix"
+    "lint-fix": "eslint --ext .js,.vue src --fix",
+    "lib": "vue-cli-service build --target lib --name km-mui --dest lib src/km-mui.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",

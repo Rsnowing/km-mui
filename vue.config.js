@@ -28,13 +28,19 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    // config.module.rule('pug')
-    //     .test(/\.pug$/)
-    //     .use('pug-html-loader')
-    //     .loader('pug-html-loader')
-    //     .end()
-
     // 移除 prefetch 插件
     config.plugins.delete('prefetch')
+
+    config.module
+      .rule('js')
+      .include
+      .add('/packages')
+      .end()
+      .use('babel')
+      .loader('babel-loader')
+      .tap(options => {
+        // 修改它的选项...
+        return options
+      })
   }
 }
