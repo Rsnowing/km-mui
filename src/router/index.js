@@ -19,7 +19,7 @@ const routes = [
     path: '/actionsheet',
     name: 'actionSheet',
     component: () =>
-      import(/* webpackChunkName: "actionsheet" */ '@/packages/actionSheet/demo.vue')
+      import(/* webpackChunkName: "actionsheet" */ '@/packages/actionsheet/demo.vue')
   },
   {
     path: '/picker',

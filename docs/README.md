@@ -26,9 +26,9 @@ import settings from "./toast.vue"
 let ToastConstructor = Vue.extend(settings);
 ```
 ## 开发日程
-- [ ] toast
-- [ ] actionsheet
+- [ ] toast -202004
+- [ ] actionsheet - 202005
 - [ ] picker
-- [ ] 顶部提示（可滚动）
+- [ ] 顶部提示（可滚动）- 20200518
 - [ ] 按需引入组件
-- [x] npm 引入
+- [x] npm 引入 - 20200519

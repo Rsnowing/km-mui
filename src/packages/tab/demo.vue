@@ -2,7 +2,6 @@
   <section class="tab-test">
     <km-tab
       :default="1"
-      :swiper="false"
       @change="handleChange"
     >
       <km-tab-panel label="第一关">
