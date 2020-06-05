@@ -1,4 +1,3 @@
-
 // 锁定背景
 export const lock = (bodyClass => {
   let scrollTop
@@ -27,7 +26,7 @@ export const lock = (bodyClass => {
  * @param {Boolean} options.transitionTimingFunction translate的timingFunction
  * @param {String} options.transitionDuration translate时间
  */
-export function translate (el, x = 0, y = 0, options) {
+export function translate(el, x = 0, y = 0, options) {
   if (!el) return
   const defaultOptions = {
     useTransfrom: true,

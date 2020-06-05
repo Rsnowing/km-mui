@@ -13,9 +13,7 @@ import '@/packages/noticebar/noticebar.scss'
 import Sticky from '@/packages/sticky/index'
 import '@/packages/sticky/sticky.scss'
 
-const components = [
-  Toast, ActionSheet, Picker, Tab, TabPanel, Noticebar, Sticky
-]
+const components = [Toast, ActionSheet, Picker, Tab, TabPanel, Noticebar, Sticky]
 
 const install = (Vue, opts = {}) => {
   components.forEach(component => {

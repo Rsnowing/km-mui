@@ -1,6 +1,6 @@
 <template>
   <section class="actionsheet-test">
-    <div @click="visible1=true">
+    <div @click="visible1 = true">
       最简单的活动面板
     </div>
     <km-actionsheet
@@ -10,19 +10,16 @@
       :cancel-text="'取消'"
       :title="'选择性别'"
       :lock-bg="false"
-      @close="visible1=false"
+      @close="visible1 = false"
       @choose="handleChoose"
       @cancel="handleCancel"
     >
     </km-actionsheet>
     <br />
-    <div @click="visible2=true">
+    <div @click="visible2 = true">
       自定义面板内容
     </div>
-    <km-actionsheet
-      :visible="visible2"
-      @close="visible2=false"
-    >
+    <km-actionsheet :visible="visible2" @close="visible2 = false">
       <template v-slot:custom>
         <div class="custom">
           我自定义
@@ -34,7 +31,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       visible1: false,
       visible2: false,
@@ -47,15 +44,15 @@ export default {
   },
 
   methods: {
-    handleClose () {
+    handleClose() {
       console.log('关闭')
     },
 
-    handleChoose (item, index) {
+    handleChoose(item, index) {
       this.choosedTagValue = item.value
     },
 
-    handleCancel () {
+    handleCancel() {
       alert('取消')
     }
   }
@@ -69,5 +66,4 @@ export default {
     padding: 20px;
   }
 }
-
 </style>

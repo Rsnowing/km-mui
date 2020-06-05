@@ -2,22 +2,14 @@
   <div class="km-picker-list">
     <!-- 滚动 -->
     <div class="km-picker-roller">
-      <div
-        v-for="(item, index) in list"
-        :key="index"
-        class="km-picker-roller-item"
-      >
+      <div v-for="(item, index) in list" :key="index" class="km-picker-roller-item">
         {{ item.value || item }}
       </div>
     </div>
     <!--  -->
     <div class="km-picker-content">
       <div class="km-picker-list-panel">
-        <div
-          v-for="(item, index) in list"
-          :key="index"
-          class="km-picker-item"
-        >
+        <div v-for="(item, index) in list" :key="index" class="km-picker-item">
           {{ item.value || item }}
         </div>
       </div>
@@ -34,14 +26,10 @@ export default {
       default: () => []
     }
   },
-  data () {
-    return {
-
-    }
+  data() {
+    return {}
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

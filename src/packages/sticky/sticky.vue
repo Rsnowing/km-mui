@@ -1,13 +1,6 @@
 <template>
-  <div
-    id="sticky"
-    :style="{height: fixed ? `${height}px` : null}"
-  >
-    <div
-      class="km-sticky"
-      :class="{'km-sticky-fixed': fixed}"
-      :style="style"
-    >
+  <div id="sticky" :style="{ height: fixed ? `${height}px` : null }">
+    <div class="km-sticky" :class="{ 'km-sticky-fixed': fixed }" :style="style">
       <slot></slot>
     </div>
   </div>
@@ -23,7 +16,7 @@ export default {
       default: 0
     }
   },
-  data () {
+  data() {
     return {
       fixed: false,
       height: 0,
@@ -32,7 +25,7 @@ export default {
   },
 
   computed: {
-    style () {
+    style() {
       if (!this.fixed) {
         return
       }
@@ -49,13 +42,13 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
     this.onScroll()
     window.addEventListener('scroll', this.onScroll, true)
   },
 
   methods: {
-    onScroll () {
+    onScroll() {
       this.height = this.$el.offsetHeight
       const offsetTop = +this.offsetTop
       const scrollTop = getScrollTop(window) // 滚动距离
@@ -72,6 +65,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

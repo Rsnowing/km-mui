@@ -1,16 +1,7 @@
 <template>
-  <div
-    class="km-noticebar"
-  >
-    <div
-      class="content-wrap"
-      :style="{'transform': 'translate(0, '+ distance +' )'}"
-    >
-      <div
-        v-for="(item, index) in list"
-        :key="index"
-        class="wrap"
-      >
+  <div class="km-noticebar">
+    <div class="content-wrap" :style="{ transform: 'translate(0, ' + distance + ' )' }">
+      <div v-for="(item, index) in list" :key="index" class="wrap">
         <div class="text">{{ item }}</div>
       </div>
     </div>
@@ -26,24 +17,24 @@ export default {
       default: () => []
     }
   },
-  data () {
+  data() {
     return {
       current: 0
     }
   },
   computed: {
-    distance () {
+    distance() {
       return -this.current * 40 + 'px'
     }
   },
-  mounted () {
+  mounted() {
     this.startTimer()
   },
-  destroyed () {
+  destroyed() {
     clearTimeout(this.timer)
   },
   methods: {
-    startTimer () {
+    startTimer() {
       const len = this.list.length
       this.timer = setTimeout(() => {
         if (this.current === len - 1) {
@@ -58,6 +49,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

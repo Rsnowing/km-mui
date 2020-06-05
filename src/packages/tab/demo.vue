@@ -1,9 +1,6 @@
 <template>
   <section class="tab-test">
-    <km-tab
-      :default="1"
-      @change="handleChange"
-    >
+    <km-tab :default="1" @change="handleChange">
       <km-tab-panel label="第一关">
         <div class="inner red">
           <span>hadjs</span>
@@ -21,13 +18,11 @@
 
 <script>
 export default {
-  data () {
-    return {
-
-    }
+  data() {
+    return {}
   },
   methods: {
-    handleChange (value) {
+    handleChange(value) {
       console.log(value)
     }
   }

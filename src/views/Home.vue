@@ -1,10 +1,7 @@
 <template>
   <div class="home">
     <ul>
-      <li
-        v-for="(item, index) in linkList"
-        :key="index"
-      >
+      <li v-for="(item, index) in linkList" :key="index">
         <router-link :to="item.href">
           {{ item.title }}
         </router-link>
@@ -16,7 +13,7 @@
 <script>
 export default {
   name: 'Home',
-  data () {
+  data() {
     return {
       linkList: [
         { title: '吐司', href: '/toast' },
@@ -27,6 +24,9 @@ export default {
         { title: 'sticky', href: '/sticky' }
       ]
     }
+  },
+  mounted() {
+    console.log(1)
   }
 }
 </script>

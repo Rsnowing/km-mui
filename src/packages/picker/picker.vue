@@ -1,12 +1,6 @@
 <template>
-  <km-actionsheet
-    :visible="visible"
-    @close="handleClose"
-  >
-    <div
-      slot="custom"
-      class="km-picker"
-    >
+  <km-actionsheet :visible="visible" @close="handleClose">
+    <div slot="custom" class="km-picker">
       <!-- 控制栏 -->
       <div class="km-picker-control">
         <div class="km-picker-cancel-btn">取消</div>
@@ -16,10 +10,7 @@
       <!-- 面板 -->
       <div class="km-picker-panel">
         <template v-for="(item, index) in data">
-          <picker-slot
-            :key="index"
-            :list="item"
-          ></picker-slot>
+          <picker-slot :key="index" :list="item"></picker-slot>
         </template>
       </div>
     </div>
@@ -41,19 +32,17 @@ export default {
       default: () => []
     }
   },
-  data () {
+  data() {
     return {
       visible: true
     }
   },
   methods: {
-    handleClose () {
+    handleClose() {
       this.visible = false
     }
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

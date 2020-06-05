@@ -1,30 +1,22 @@
 <template>
-  <div
-    class="km-tab-panel"
-    :style="{width: width}"
-  >
+  <div class="km-tab-panel" :style="{ width: width }">
     <slot></slot>
   </div>
 </template>
 <script>
 export default {
   name: 'kmTabPanel',
-  props: {
-  },
-  data () {
+  props: {},
+  data() {
     return {
       width: ''
     }
   },
-  computed: {
-
-  },
-  mounted () {
+  computed: {},
+  mounted() {
     this.width = screen.width + 'px'
   },
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 <style lang="scss">

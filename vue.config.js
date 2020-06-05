@@ -2,7 +2,6 @@
 
 module.exports = {
   publicPath: '',
-  // outputDir: path.resolve(__dirname, '../../../pub/anxinpin-enterprise/common'),
   assetsDir: 'static',
   productionSourceMap: false,
   lintOnSave: process.env.NODE_ENV !== 'production',

@@ -1,27 +1,11 @@
 <template>
   <transition name="toastfade">
-    <div
-      v-if="visible"
-      :id="id"
-      :class="toastClass"
-    >
-      <div
-        class="km-toast-inner"
-        :style="toastStyle"
-      >
-        <span
-          v-if="hasIcon"
-          class="km-toast-icon-wrapper"
-        >
-          <i
-            :class="iconClass"
-            :style="{ 'background-image': cusIcon }"
-          />
+    <div v-if="visible" :id="id" :class="toastClass">
+      <div class="km-toast-inner" :style="toastStyle">
+        <span v-if="hasIcon" class="km-toast-icon-wrapper">
+          <i :class="iconClass" :style="{ 'background-image': cusIcon }" />
         </span>
-        <span
-          class="km-toast-text"
-          v-html="msg"
-        />
+        <span class="km-toast-text" v-html="msg" />
       </div>
     </div>
   </transition>
@@ -35,7 +19,7 @@ export default {
 
   props: {},
 
-  data () {
+  data() {
     return {
       id: '',
       type: '',
@@ -55,15 +39,15 @@ export default {
   },
 
   computed: {
-    hasIcon () {
+    hasIcon() {
       return this.type !== 'text'
     },
 
-    cusIcon () {
+    cusIcon() {
       return this.icon ? `url(${this.icon})` : ''
     },
 
-    iconClass () {
+    iconClass() {
       return [
         'km-toast-icon',
         this.type,
@@ -73,7 +57,7 @@ export default {
       ]
     },
 
-    toastClass () {
+    toastClass() {
       return [
         'km-toast',
         { 'km-toast-center': this.center },
@@ -83,26 +67,23 @@ export default {
       ]
     },
 
-    toastStyle () {
-      return [
-        { 'text-align': this.textAlign },
-        { 'background-color': this.bgColor }
-      ]
+    toastStyle() {
+      return [{ 'text-align': this.textAlign }, { 'background-color': this.bgColor }]
     }
   },
 
   watch: {
-    visible (val) {
+    visible(val) {
       val && this.show()
     }
   },
 
-  destroyed () {
+  destroyed() {
     this.timer = null
   },
 
   methods: {
-    show () {
+    show() {
       this.clearTimer()
       if (this.duration) {
         this.timer = setTimeout(() => {
@@ -113,7 +94,7 @@ export default {
       this.lockBg && lock.open()
     },
 
-    hide () {
+    hide() {
       this.clearTimer()
       this.visible = false
       // 背景锁定关闭
@@ -121,7 +102,7 @@ export default {
       typeof this.onClose === 'function' && this.onClose()
     },
 
-    clearTimer () {
+    clearTimer() {
       if (this.timer) {
         clearTimeout(this.timer)
         this.timer = null

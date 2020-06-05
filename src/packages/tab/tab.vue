@@ -1,16 +1,13 @@
 <template>
   <div class="km-tab">
     <div class="km-tab-title">
-      <b
-        class="nav-bar"
-        :style="[{transform:'translateX('+initX+'px)'},{width:navWidth+'px'}]"
-      ></b>
+      <b class="nav-bar" :style="[{ transform: 'translateX(' + initX + 'px)' }, { width: navWidth + 'px' }]"></b>
       <span
-        v-for="(value,index) in tabList"
+        v-for="(value, index) in tabList"
         :key="index"
         class="km-title-nav-list"
-        :class="['km-title-nav',{'km-tab-active' : activeIndex === index}]"
-        @click="handleSwitch(index,value)"
+        :class="['km-title-nav', { 'km-tab-active': activeIndex === index }]"
+        @click="handleSwitch(index, value)"
       >
         <template v-if="value">{{ value }}</template>
       </span>
@@ -47,7 +44,7 @@ export default {
       default: true
     }
   },
-  data () {
+  data() {
     return {
       initX: 0,
       navWidth: 0,
@@ -65,17 +62,15 @@ export default {
     }
   },
 
-  computed: {
-
-  },
+  computed: {},
 
   watch: {
-    activeIndex (val) {
+    activeIndex(val) {
       this.updatePanel()
     }
   },
 
-  mounted () {
+  mounted() {
     this.activeIndex = this.default
     this.$nextTick(() => {
       this.$slots.default && this.updatePanel()
@@ -85,7 +80,7 @@ export default {
 
   methods: {
     /** ** 与触摸相关 ****/
-    getDirection (x, y) {
+    getDirection(x, y) {
       if (x > y && x > MIN_DISTANCE) {
         return 'horizontal'
       }
@@ -95,7 +90,7 @@ export default {
       return ''
     },
 
-    resetTouchStatus () {
+    resetTouchStatus() {
       this.direction = ''
       this.diffX = 0
       this.diffY = 0
@@ -103,14 +98,14 @@ export default {
       this.offsetY = 0
     },
 
-    handleTouchStart (event) {
+    handleTouchStart(event) {
       if (!this.swiper) return
       this.resetTouchStatus()
       this.startX = event.touches[0].clientX
       this.startY = event.touches[0].clientY
     },
 
-    handleTouchMove (event) {
+    handleTouchMove(event) {
       if (!this.swiper) return
       const touch = event.touches[0]
       this.diffX = touch.clientX - this.startX
@@ -125,7 +120,7 @@ export default {
       }
     },
 
-    handleTouchEnd (event) {
+    handleTouchEnd(event) {
       if (!this.swiper) return
       const { direction, diffX, activeIndex } = this
       if (direction === 'horizontal' && this.offsetX >= MIN_SWIPE_DISTANCE) {
@@ -138,14 +133,14 @@ export default {
       translate(this.$refs.swiper, -screen.width * this.activeIndex)
     },
 
-    handleSwitch (index, value) {
+    handleSwitch(index, value) {
       this.activeIndex = index
       this.initX = this.activeIndex * this.navWidth
       this.swiper && translate(this.$refs.swiper, -screen.width * this.activeIndex)
       this.$emit('change', value)
     },
 
-    getTabWidth () {
+    getTabWidth() {
       const tabTitle = document.querySelector('.km-tab-title')
       const tabWidth = window.getComputedStyle(tabTitle).width
       const width = tabWidth.substring(0, tabWidth.length - 2)
@@ -154,17 +149,17 @@ export default {
       this.initX = this.activeIndex * this.navWidth
     },
 
-    updatePanel () {
+    updatePanel() {
       setTimeout(() => {
         this.tabList = []
         this.initPanel([...this.$slots.default])
       }, 100)
     },
 
-    initPanel (slot) {
+    initPanel(slot) {
       for (let i = 0; i < slot.length; i++) {
         const slotTag = slot[i].tag
-        if (typeof (slotTag) === 'string' && slotTag.indexOf('kmTabPanel') !== -1) {
+        if (typeof slotTag === 'string' && slotTag.indexOf('kmTabPanel') !== -1) {
           const attrs = slot[i].data.attrs
           this.tabList.push(attrs.label)
           if (!this.swiper) {
@@ -183,26 +178,23 @@ export default {
       }, 0)
     },
 
-    hasClass (elements, cName) {
+    hasClass(elements, cName) {
       return !!elements.className.match(new RegExp('(\\s|^)' + cName + '(\\s|$)')) // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断
     },
 
-    addClass (elements, cName) {
+    addClass(elements, cName) {
       if (!this.hasClass(elements, cName)) {
         elements.className += ' ' + cName
       }
     },
 
-    removeClass (elements, cName) {
+    removeClass(elements, cName) {
       if (this.hasClass(elements, cName)) {
         elements.className = elements.className.replace(new RegExp('(\\s|^)' + cName + '(\\s|$)'), ' ') // replace方法是替换
       }
     }
-
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

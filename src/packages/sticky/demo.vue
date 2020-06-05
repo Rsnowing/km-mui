@@ -6,23 +6,21 @@
     <p>3</p>
     <p>3</p>
     <p>3</p>
-    <km-sticky
-      :offset-top="30"
-    >
-      <div style="height: 44px;background: tomato;">吸顶</div>
+    <km-sticky :offset-top="30">
+      <div style="height: 44px; background: tomato;">吸顶</div>
     </km-sticky>
   </section>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       container: null
     }
   },
 
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       this.container = this.$refs.container
     })
@@ -34,5 +32,4 @@ export default {
 .sticky-test {
   height: 2000px;
 }
-
 </style>

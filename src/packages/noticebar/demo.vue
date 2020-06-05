@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       list: [
         '今晚上线1今晚上线1今晚上线1今晚上线1今晚上线1今晚上线1今晚上线1今晚上线1今晚上线1今晚上线1今晚上线1',
@@ -26,6 +26,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

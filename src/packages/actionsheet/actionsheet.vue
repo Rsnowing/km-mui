@@ -1,24 +1,12 @@
 <template>
   <div class="km-actionsheet">
     <transition name="kmFade">
-      <div
-        v-show="visible"
-        class="km-actionsheet-mask"
-        @click="handleClickMask"
-      ></div>
+      <div v-show="visible" class="km-actionsheet-mask" @click="handleClickMask"></div>
     </transition>
     <transition name="kmSlideUp">
-      <div
-        v-show="visible"
-        class="km-actionsheet-panel"
-      >
+      <div v-show="visible" class="km-actionsheet-panel">
         <!-- 标题 -->
-        <div
-          v-if="title"
-          class="km-actionsheet-title"
-        >
-          {{ title }}
-        </div>
+        <div v-if="title" class="km-actionsheet-title">{{ title }}</div>
         <!-- slot -->
         <div class="km-actionsheet-custom">
           <slot name="custom"></slot>
@@ -29,18 +17,14 @@
             v-for="(item, index) in menuItems"
             :key="index"
             class="km-actionsheet-item"
-            :class="{'km-actionsheet-item-active': isActive(item), 'km-actionsheet-item-disable': item.disable}"
+            :class="{ 'km-actionsheet-item-active': isActive(item), 'km-actionsheet-item-disable': item.disable }"
             @click="handleChoose(item, index)"
           >
             {{ item[optionTag] }}
           </li>
         </ul>
         <!-- 取消按钮 -->
-        <div
-          v-if="cancelText"
-          class="km-actionsheet-cancel"
-          @click="handleCancel"
-        >
+        <div v-if="cancelText" class="km-actionsheet-cancel" @click="handleCancel">
           {{ cancelText }}
         </div>
       </div>
@@ -80,33 +64,33 @@ export default {
     }
   },
   watch: {
-    visible (value) {
+    visible(value) {
       if (this.lockBg) {
         value ? lock.open() : lock.close()
       }
     }
   },
   methods: {
-    isActive (item) {
+    isActive(item) {
       return this.value && this.value === item.value
     },
 
-    close () {
+    close() {
       this.$emit('close')
     },
 
-    handleClickMask () {
+    handleClickMask() {
       this.close()
     },
 
-    handleChoose (item, index) {
+    handleChoose(item, index) {
       if (!item.disable) {
         this.close()
         this.$emit('choose', item, index)
       }
     },
 
-    handleCancel () {
+    handleCancel() {
       this.$emit('cancel')
       this.close()
     }
@@ -114,6 +98,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

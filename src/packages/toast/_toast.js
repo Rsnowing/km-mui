@@ -6,7 +6,7 @@ let instance
 const instanceArr = []
 let loadingInstance
 
-function _showToast () {
+function _showToast() {
   instance.vm = instance.$mount()
   document.body.appendChild(instance.$el)
   Vue.nextTick(() => {
@@ -14,7 +14,8 @@ function _showToast () {
   })
 }
 
-function _getInstance (obj) {
+function _getInstance(obj) {
+  // debugger
   const opt = {
     id: new Date().getTime(),
     ...obj
@@ -35,25 +36,26 @@ function _getInstance (obj) {
 
 const Toast = {
   name: 'KmToast',
-  text (msg, obj = {}) {
+  text(msg, obj = {}) {
     return _getInstance({ ...obj, msg, type: 'text' })
   },
-  success (msg, obj = {}) {
+  success(msg, obj = {}) {
     return _getInstance({ ...obj, msg, type: 'success' })
   },
-  fail (msg, obj = {}) {
+  fail(msg, obj = {}) {
     return _getInstance({ ...obj, msg, type: 'fail' })
   },
-  warn (msg, obj = {}) {
+  warn(msg, obj = {}) {
     return _getInstance({ ...obj, msg, type: 'warn' })
   },
-  loading (msg, obj = {}) {
+  loading(msg, obj = {}) {
     obj.duration = obj.duration || 0 // loading类型默认不自动关闭
     loadingInstance = _getInstance({ ...obj, msg, type: 'loading' })
     return loadingInstance
   },
-  hideLoading () {
+  hideLoading() {
     loadingInstance.hide()
+    // return _getInstance()
   }
 }
 
