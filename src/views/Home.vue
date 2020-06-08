@@ -21,7 +21,8 @@ export default {
         { title: 'picker选择器', href: '/picker' },
         { title: 'tab', href: '/tab' },
         { title: 'noticebar', href: '/noticebar' },
-        { title: 'sticky', href: '/sticky' }
+        { title: 'sticky', href: '/sticky' },
+        { title: 'countdown', href: '/countdown' }
       ]
     }
   },
@@ -30,4 +31,9 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.home {
+  padding: 10px;
+  width: 10px;
+}
+</style>

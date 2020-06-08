@@ -38,6 +38,11 @@ const routes = [
     path: '/sticky',
     name: 'sticky',
     component: () => import(/* webpackChunkName: "sticky" */ '@/packages/sticky/demo.vue')
+  },
+  {
+    path: '/countdown',
+    name: 'countdown',
+    component: () => import(/* webpackChunkName: "countdown" */ '@/packages/countdown/demo.vue')
   }
 ]
 

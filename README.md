@@ -26,3 +26,20 @@ npm run test:unit
 
 ### 组件文档
 [文档地址](https://rsnowing.github.io/km-mui/#/)
+
+
+  // "husky": {
+  //   "hooks": {
+  //     "pre-commit": "lint-staged"
+  //   }
+  // },
+  // "lint-staged": {
+  //   "*.{js,jsx,vue}": [
+  //     "vue-cli-service lint",
+  //     "git add"
+  //   ],
+  //   "*.{html,vue,css,sass,scss}": [
+  //     "stylelint --fix",
+  //     "git add"
+  //   ]
+  // }
